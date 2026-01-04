@@ -1,17 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import CustomerList from "./pages/CustomerList";
 import CreateCustomer from "./pages/CreateCustomer";
 import CustomerDetails from "./pages/CustomerDetails";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<CustomerList />} />
         <Route path="/create" element={<CreateCustomer />} />
-        <Route path="/customers/:id" element={<CustomerDetails />} />
+
+        {/* 🔥 THIS IS THE MISSING ROUTE */}
+        <Route path="/customer/:id" element={<CustomerDetails />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
